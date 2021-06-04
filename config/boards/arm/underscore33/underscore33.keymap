@@ -4,6 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
+// This key-map file WILL NOT WORK FOR YOU, you will need to modify it. I really do not recommend adapting to it.
+// This key-map file is set-up to be the full space layout.
+// I strongly urge you to customise your firmware to suit your usage.
+// Please feel free to join the ZMK server at https://discord.gg/TdRMQaTYdF for help.
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -17,25 +22,25 @@
 // |  Q  |  W  |  E  |  R  |  T   |  Y  |  U   |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G   |  H  |  J   |  K  |  L  |  ;  |
 // |  Z  |  X  |  C  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
-//             | GUI | NAV | SHFT | SPC | SYM  | ALT |
+//             |  1* |  2  |  3*  |  4  |  5   |  6* | Starred boxes are the locations for full space layout.
                         bindings = <
    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P
    &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI
    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-          &kp LGUI &mo 1 &kp LSHFT &kp SPACE &mo 2 &kp RALT
+   &lt 2 RET &none &kp SPACE  &none &none &lt 1 BSPC
                         >;
                 };
                 nav_layer {
 // -----------------------------------------------------------------------------------------
-// |BTCLR|     | ESC |  ~   |     |   | TAB | HOME |  UP  | END | DEL  |
+// |BTCLR| RST | ESC |  ~   |     |   | TAB | HOME |  UP  | END | DEL  |
 // | BT1 | GUI | ALT | CTRL | NUM |   |  /  | LEFT | DOWN | RGT | BKSP |
-// | BT2 |     |     |      |     |   |  \  | ENT  |      |     |      |
+// | BT2 | BOOT|     |      |     |   |  \  | ENT  |      |     |      |
 //             |     |      |     |   |     |      |      |
                         bindings = <
-   &bt BT_CLR   &trans      &kp ESC  &kp TILDE &trans     &kp TAB  &kp HOME &kp UP   &kp END   &kp DEL
+   &bt BT_CLR   &reset      &kp ESC  &kp TILDE &trans     &kp TAB  &kp HOME &kp UP   &kp END   &kp DEL
    &bt BT_SEL 0 &kp K_CMENU &kp RALT &kp LCTRL &trans     &kp FSLH &kp LEFT &kp DOWN &kp RIGHT &kp BSPC
-   &bt BT_SEL 1 &trans      &trans   &trans    &trans     &kp BSLH &kp RET  &trans   &trans    &trans
-                            &trans   &trans    &trans     &trans   &trans   &trans
+   &bt BT_SEL 1 &bootloader &trans   &trans    &trans     &kp BSLH &kp RET  &trans   &trans    &trans
+   &trans   &trans    &trans     &trans   &trans   &trans
                         >;
                 };
 
@@ -48,8 +53,8 @@
                         bindings = <
    &kp N1    &kp N2    &kp N3    &kp N4      &kp N5      &kp N6    &kp N7    &kp N8    &kp N9      &kp N0
    &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PRCNT   &kp CARET &kp AMPS  &kp STAR  &kp MINUS   &kp SLASH
-   &kp LBKT  &kp RBKT  &kp BSLH  &kp EQL     &kp LSHFT   &kp RSHFT &kp GRAVE &kp UNDER &kp KP_LPAR &kp KP_RPAR
-                       &kp LGUI  &trans      &kp SPACE   &kp RET   &trans    &kp RALT
+   &kp LBKT  &kp RBKT  &kp BSLH  &kp EQL     &kp LSHFT   &kp RSHFT &kp GRAVE &kp UNDER &kp LPAR &kp RPAR
+   &kp LGUI  &trans      &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
         };
