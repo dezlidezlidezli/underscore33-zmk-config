@@ -64,7 +64,7 @@ jobs:
           path: underscore33-bigspace.uf2
       - name: West Build (_33BLE Splitspace)
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-build-underscore33-splitspace
+        id: west-build-underscore33
         with:
           args: 'build "-s zmk/app -b underscore33 -- -DZMK_CONFIG=/github/workspace/config/"'
       - name: _33BLE Splitspace DTS File
