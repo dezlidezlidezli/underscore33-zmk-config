@@ -52,7 +52,7 @@ jobs:
           args: 'build "-s zmk/app -b underscore33-bigspace -- -DZMK_CONFIG=/github/workspace/config/"'
       - name: _33BLE Bigspace DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/underscore33-bigspace.dts.pre.tmp
+        run: cat -n build/zephyr/underscore33.dts.pre.tmp
       - name: _33BLE Bigspace Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
@@ -60,7 +60,7 @@ jobs:
       - name: Archive (_33BLE Bigspace)
         uses: actions/upload-artifact@v2
         with:
-          name: firmware
+          name: bigspace
           path: underscore33-bigspace.uf2
       - name: West Build (_33BLE Splitspace)
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
@@ -69,7 +69,7 @@ jobs:
           args: 'build "-s zmk/app -b underscore33-splitspace -- -DZMK_CONFIG=/github/workspace/config/"'
       - name: _33BLE Splitspace DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/underscore33-bigspace.dts.pre.tmp
+        run: cat -n build/zephyr/underscore33.dts.pre.tmp
       - name: _33BLE Splitspace Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
@@ -77,5 +77,5 @@ jobs:
       - name: Archive (_33BLE Splitspace)
         uses: actions/upload-artifact@v2
         with:
-          name: firmware
+          name: splitspace
           path: underscore33-splitspace.uf2
