@@ -10,7 +10,7 @@
 
 / {
 	model = "_33BLE";
-	compatible = "underscore33";
+	compatible = "underscore33-bigspace";
 
   chosen {
           zephyr,code-partition = &code_partition;

@@ -52,7 +52,7 @@ jobs:
           args: 'build "-s zmk/app -b underscore33-bigspace -- -DZMK_CONFIG=/github/workspace/config/"'
       - name: _33BLE Bigspace DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/underscore33.dts.pre.tmp
+        run: cat -n build/zephyr/underscore33-bigspace.dts.pre.tmp
       - name: _33BLE Bigspace Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
@@ -66,7 +66,7 @@ jobs:
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
         id: west-build-underscore33-splitspace
         with:
-          args: 'build "-s zmk/app -b underscore33-splitspace -- -DZMK_CONFIG=/github/workspace/config/"'
+          args: 'build "-s zmk/app -b underscore33 -- -DZMK_CONFIG=/github/workspace/config/"'
       - name: _33BLE Splitspace DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/underscore33.dts.pre.tmp

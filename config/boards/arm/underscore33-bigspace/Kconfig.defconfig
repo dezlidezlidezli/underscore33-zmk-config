@@ -1,13 +1,13 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if BOARD_underscore33
+if BOARD_underscore33-bigspace
 
 config ZMK_KEYBOARD_NAME
     default "_33BLE"
 
 config BOARD
-	default "underscore33"
+	default "underscore33-bigspace"
 
 if USB
 
@@ -31,4 +31,4 @@ config ZMK_USB
 config ZMK_BATTERY_VOLTAGE_DIVIDER
 	default y
 
-endif # BOARD_underscore33
+endif # BOARD_underscore33-bigspace
