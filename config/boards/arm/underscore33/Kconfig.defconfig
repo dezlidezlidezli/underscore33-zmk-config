@@ -4,7 +4,7 @@
 if BOARD_underscore33
 
 config ZMK_KEYBOARD_NAME
-    default "underscore33"
+    default "_33BLE"
 
 config BOARD
 	default "underscore33"
