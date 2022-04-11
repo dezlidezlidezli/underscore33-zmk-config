@@ -1,4 +1,4 @@
-on: [push, pull_request, create, workflow_dispatch]
+on: [push, pull_request, workflow_dispatch]
 
 name: Build
 
@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: config/
       - name: Cache west modules
         uses: actions/cache@v2
         env:
@@ -24,19 +22,19 @@ jobs:
             zephyr/
             bootloader/
             zmk/
-          key: ${{ runner.os }}-build-v2-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: Initialize workspace (west init)
+      - name: West Init
         run: west init -l config
-      - name: Update modules (west update)
+      - name: West Update
         run: west update
-      - name: Export zephyr CMake package (west zephyr-export)
+      - name: West config Zephyr base
+        run: west config --global zephyr.base-prefer configfile
+      - name: West Zephyr export
         run: west zephyr-export
-      - name: List modules (west list)
-        run: west list
       - name: Build (west build)
         run: west build -s zmk/app -b underscore33 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: _33BLE .config
