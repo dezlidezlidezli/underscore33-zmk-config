@@ -81,7 +81,7 @@ behaviors {
 //             | / | 0 |  ENT | BSPC | DEL |  |
                         bindings = <
    &kp KP_PLUS    &kp N1    &kp N2    &kp N3      &kp LBKT      &kp RBKT    &kp CAPS    &kp UP    &trans     &trans
-   &kp KP_MINUS  &kp N4    &kp N5  &kp N6  &KP_EQUAL   &trans &trans  &kp LEFT  &kp DOWN  &kp RIGHT
+   &kp KP_MINUS  &kp N4    &kp N5  &kp N6  &kp KP_EQUAL   &trans &trans  &kp LEFT  &kp DOWN  &kp RIGHT
    &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9    &kp DOT   &trans  &trans  &kp RCTRL &kp RGUI    &kp RALT
    &kp KP_DIVIDE    &kp N0    &trans    &kp BSPC      &kp DEL      &trans
                         >;
