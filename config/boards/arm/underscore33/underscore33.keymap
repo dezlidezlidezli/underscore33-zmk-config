@@ -117,7 +117,7 @@ behaviors {
                         bindings = <
    &kp SLASH &kp MINUS &kp N7   &kp N8      &kp N9     &kp S    &kp I    &kp T    &kp F5     &kp F6
    &kp STAR  &kp PLUS  &kp N4   &kp N5      &kp N6     &kp D    &kp O    &kp W    &kp F3     &kp F4
-   &kp DOT   &kp ENT   &kp N1   &kp N2      &kp N3     &kp N    &kp LT  &kp Y    &kp F1     &kp F2
+   &kp DOT   &kp ENT   &kp N1   &kp N2      &kp N3     &kp N    &kp LESS_THAN  &kp Y    &kp F1     &kp F2
    &trans    &trans    &trans    &trans      &trans      &trans
                         >;
                 };
